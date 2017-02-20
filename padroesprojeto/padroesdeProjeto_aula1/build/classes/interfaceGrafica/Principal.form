@@ -36,6 +36,10 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnOk" alignment="1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnListarArvore" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="btnListarSet" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnListarFila" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Component id="btnListarArrayList" min="-2" max="-2" attributes="0"/>
@@ -57,6 +61,8 @@
                   <Component id="btnListarArrayList" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnLimpar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnListarFila" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnListarSet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnListarArvore" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane2" pref="453" max="32767" attributes="0"/>
@@ -150,6 +156,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListarFilaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListarSet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Listar Set"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListarSetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnListarArvore">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Listar Arvore"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListarArvoreActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

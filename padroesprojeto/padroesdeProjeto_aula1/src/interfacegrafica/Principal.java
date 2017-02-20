@@ -14,6 +14,7 @@ public class Principal extends javax.swing.JFrame {
     private ArrayList<Aluno> listaAlunos;
     private DefaultTableModel model;
     private AlunoPO alunoPO;
+    File selectedFile;
 
     public Principal() {
         initComponents();
@@ -30,31 +31,41 @@ public class Principal extends javax.swing.JFrame {
 //                    aluno.getNome(),
 //                    aluno.getDisciplinas()});
 //            }
-//            
-//            listaAlunos.forEach(a -> model.addRow(new Object[]{
-//                    a.getMatricula(),
-//                    a.getMatricula().getNomeDoCurso(),
-//                    a.getNome(),
-//                    a.getDisciplinas()}));
 //        } catch (Exception erro) {
 //            JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + erro.getMessage());
 //        }
 //    }
     public void preencherTabela(Iterator conjunto) {
         try {
-      while(conjunto.hasNext()){
+            while (conjunto.hasNext()) {
                 Object[] linha = new Object[4];
-                Aluno objetoAluno = (Aluno)conjunto.next();
+                Aluno objetoAluno = (Aluno) conjunto.next();
                 linha[0] = objetoAluno.getMatricula();
                 linha[1] = objetoAluno.getMatricula().getNomeDoCurso();
                 linha[2] = objetoAluno.getNome();
                 linha[3] = objetoAluno.getDisciplinas();
-                    model.addRow(linha);
-                
+                model.addRow(linha);
+
             }
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + erro.getMessage());
         }
+    }
+    
+        public File abrirArquivo() {
+        JFileChooser arquivo = new JFileChooser();
+        int res = arquivo.showOpenDialog(this);
+
+        if (res == JFileChooser.APPROVE_OPTION) {
+            try {
+                return selectedFile = arquivo.getSelectedFile();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhum arquivo.");
+        }
+        return null;
     }
 
     /**
@@ -73,6 +84,8 @@ public class Principal extends javax.swing.JFrame {
         btnListarArrayList = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
         btnListarFila = new javax.swing.JButton();
+        btnListarSet = new javax.swing.JButton();
+        btnListarArvore = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -116,6 +129,20 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnListarSet.setText("Listar Set");
+        btnListarSet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarSetActionPerformed(evt);
+            }
+        });
+
+        btnListarArvore.setText("Listar Arvore");
+        btnListarArvore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarArvoreActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,6 +156,10 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnOk, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnListarArvore)
+                                .addGap(28, 28, 28)
+                                .addComponent(btnListarSet)
+                                .addGap(18, 18, 18)
                                 .addComponent(btnListarFila)
                                 .addGap(32, 32, 32)
                                 .addComponent(btnListarArrayList)
@@ -143,7 +174,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListarArrayList)
                     .addComponent(btnLimpar)
-                    .addComponent(btnListarFila))
+                    .addComponent(btnListarFila)
+                    .addComponent(btnListarSet)
+                    .addComponent(btnListarArvore))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -159,44 +192,51 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void btnListarArrayListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArrayListActionPerformed
-        JFileChooser abrirArquivo = new JFileChooser();
-        int res = abrirArquivo.showOpenDialog(this);
-
-        if (res == JFileChooser.APPROVE_OPTION) {
             try {
-                File selectedFile = abrirArquivo.getSelectedFile();
+                abrirArquivo();
                 Iterator urlarquivo = alunoPO.listarComArraylist(selectedFile.getAbsolutePath());
                 preencherTabela(urlarquivo);
                 //preencherTabela(listaAlunos);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhum arquivo.");
-        }
     }//GEN-LAST:event_btnListarArrayListActionPerformed
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-        // TODO add your handling code here:
-            model.setNumRows(0);
+        model.setNumRows(0);
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnListarFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarFilaActionPerformed
-                JFileChooser abrirArquivo = new JFileChooser();
-        int res = abrirArquivo.showOpenDialog(this);
-
-        if (res == JFileChooser.APPROVE_OPTION) {
             try {
-                File selectedFile = abrirArquivo.getSelectedFile();
+                abrirArquivo();
                 Iterator urlarquivo = alunoPO.listarComFila(selectedFile.getAbsolutePath());
                 preencherTabela(urlarquivo);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhum arquivo.");
-        }
     }//GEN-LAST:event_btnListarFilaActionPerformed
+
+    private void btnListarSetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarSetActionPerformed
+                 try {
+                abrirArquivo();
+                Iterator urlarquivo = alunoPO.listarComSet(selectedFile.getAbsolutePath());
+                preencherTabela(urlarquivo);
+                //preencherTabela(listaAlunos);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
+            }
+    }//GEN-LAST:event_btnListarSetActionPerformed
+
+    private void btnListarArvoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArvoreActionPerformed
+            try {
+                abrirArquivo();
+                Iterator urlarquivo = alunoPO.listarComArvore(selectedFile.getAbsolutePath());
+                preencherTabela(urlarquivo);
+                //preencherTabela(listaAlunos);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
+            }
+    }//GEN-LAST:event_btnListarArvoreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -236,7 +276,9 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnListarArrayList;
+    private javax.swing.JButton btnListarArvore;
     private javax.swing.JButton btnListarFila;
+    private javax.swing.JButton btnListarSet;
     private javax.swing.JButton btnOk;
     private javax.swing.JFileChooser fileCh;
     private javax.swing.JScrollPane jScrollPane2;
