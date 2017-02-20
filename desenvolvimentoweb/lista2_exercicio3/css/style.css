@@ -1,0 +1,13 @@
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 5px;
+    }
+.btn-default{
+  margin-right: 10px;
+  text-align: right;
+}
+fieldset{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}

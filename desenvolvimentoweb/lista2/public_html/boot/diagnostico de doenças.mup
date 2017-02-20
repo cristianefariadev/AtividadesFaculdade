@@ -1,0 +1,235 @@
+{
+  "id": "root",
+  "formatVersion": 3,
+  "ideas": {
+    "1": {
+      "id": 1,
+      "title": "diagnostico de doenças",
+      "attr": {
+        "style": {
+          "width": 121
+        },
+        "position": [
+          -160,
+          -171,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "Febre",
+          "id": 5,
+          "ideas": {
+            "1": {
+              "title": "acima de 38º",
+              "id": 6,
+              "ideas": {
+                "1": {
+                  "title": "entre 4 a 7 dias",
+                  "id": 9,
+                  "ideas": {
+                    "1": {
+                      "title": "Chikungunya",
+                      "id": 12,
+                      "attr": {
+                        "position": [
+                          174.5,
+                          -2,
+                          1
+                        ]
+                      }
+                    }
+                  }
+                },
+                "2": {
+                  "title": "entre 2 a 3 dias",
+                  "id": 11,
+                  "ideas": {
+                    "1": {
+                      "title": "Dengue",
+                      "id": 13
+                    }
+                  }
+                }
+              }
+            },
+            "2": {
+              "title": "Sem febre ou até 38º",
+              "id": 7,
+              "attr": {
+                "style": {
+                  "width": 123
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Zika",
+                  "id": 14
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#008000"
+            }
+          }
+        },
+        "2": {
+          "title": "Manchas vermelha na pele",
+          "id": 22,
+          "ideas": {
+            "1": {
+              "title": "esta presente ",
+              "id": 31,
+              "ideas": {
+                "1": {
+                  "title": "Zika",
+                  "id": 32
+                }
+              }
+            },
+            "2": {
+              "title": "pode ou nao estar presente",
+              "id": 33,
+              "ideas": {
+                "1": {
+                  "title": "Chikungunya",
+                  "id": 34
+                },
+                "2": {
+                  "title": "Dengue",
+                  "id": 35
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FF6600"
+            }
+          }
+        },
+        "-1": {
+          "title": "dor nas articulaçoes",
+          "id": 15,
+          "ideas": {
+            "1": {
+              "title": "Leve",
+              "id": 16,
+              "ideas": {
+                "1": {
+                  "title": "Zika",
+                  "id": 17
+                }
+              }
+            },
+            "2": {
+              "title": "Intensa/moderada",
+              "id": 18,
+              "ideas": {
+                "1": {
+                  "title": "Chikungunya",
+                  "id": 19
+                }
+              }
+            },
+            "3": {
+              "title": "leve/moderada",
+              "id": 20,
+              "ideas": {
+                "1": {
+                  "title": "Dengue",
+                  "id": 21
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#FF0000"
+            }
+          }
+        },
+        "-2": {
+          "title": "Prurido",
+          "id": 24,
+          "ideas": {
+            "1": {
+              "title": "Leve",
+              "id": 36,
+              "ideas": {
+                "1": {
+                  "title": "Dengue",
+                  "id": 37,
+                  "ideas": {}
+                },
+                "2": {
+                  "title": "Chikungunya",
+                  "id": 39
+                }
+              }
+            },
+            "2": {
+              "title": "Moderada/Intensa",
+              "id": 40,
+              "ideas": {
+                "1": {
+                  "title": "zika",
+                  "id": 41
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "background": "#993300"
+            }
+          }
+        },
+        "-12": {
+          "title": "Vermelhidão nos olhos",
+          "id": 25,
+          "ideas": {
+            "1": {
+              "title": "esta presente",
+              "id": 26,
+              "ideas": {
+                "1": {
+                  "title": "Chikungunya",
+                  "id": 28
+                },
+                "2": {
+                  "title": "zika",
+                  "id": 29
+                }
+              }
+            },
+            "2": {
+              "title": "não esta presente",
+              "id": 27,
+              "ideas": {
+                "1": {
+                  "title": "Dengue",
+                  "id": 30
+                }
+              }
+            }
+          },
+          "attr": {
+            "position": [
+              -3.5,
+              131,
+              1
+            ],
+            "style": {
+              "background": "#0000FF"
+            }
+          }
+        }
+      }
+    }
+  },
+  "attr": {},
+  "title": "diagnostico de doenças"
+}

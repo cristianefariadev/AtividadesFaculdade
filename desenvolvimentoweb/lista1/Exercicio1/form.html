@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <fieldset style="width:30%">
+        <form>
+            <label>Nome:dfsdafadsfa </label>
+            <input type="text" name="nome"><br><br>
+            <label>Senha: </label>
+            <input type="password" name="senha">
+
+            <p>Em qual moeda você prefere receber seu salário?<br>
+                <input type="radio" name="moeda" value="real">Real<br>
+                <input type="radio" name="moeda" value="dolar">Dolar<br>
+                <input type="radio" name="moeda" value="euro">Euro<br>
+                <input type="radio" name="moeda" value="yen">Yen<br>
+            </p>
+            <p>Quais das afirmações seguintes você considera verdadeiras?<br>
+                <input type="checkbox" name="alternativa" value="a">O Boris Yeltsin é abstinente<br>
+                <input type="checkbox" name="alternativa" value="b">O Bill Clinton é casto.<br>
+                <input type="checkbox" name="alternativa" value="c">O Bill Gates é pobre<br>
+                <input type="checkbox" name="alternativa" value="d">A fernanda Montenegro é péssima atriz.<br>
+                <input type="checkbox" name="alternativa" value="e">A Bibi Ferreira é uma beldade.<br>
+                <input type="checkbox" name="alternativa" value="f">O Linus Torvalds não entende de programação.<br>
+            </p>
+            <p>Arquivo a enviar: <input type="file">
+            </p>
+            <p>Seus times favoritos?<br>
+                <select name="time">
+                    <option value="corinthians">Corinthians</option>
+                    <option value="palmeiras">Palmeiras</option>
+                    <option value="santos">Santos</option>
+                </select>
+            </p>
+            <p>Gostaria de fazer comentários?<br>
+            <textarea name="comentario" cols="50" rows="10" pla>Ponha seu comentario aqui.</textarea>
+            </p>
+            <br>
+            <input type="button" value="Manda!">
+            <input type="reset" value="Limpar">
+        </form>
+    </fieldset>
+</body>
+</html>

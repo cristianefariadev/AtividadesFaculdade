@@ -1,0 +1,14 @@
+section {
+    padding: 10px 50px;  
+}
+#dados{  
+   float: left;  
+   width:60%;
+   padding-left: 50px;
+}
+#foto{
+margin-left: 40%;
+}
+h1{
+    background-color: lightgrey;
+}
