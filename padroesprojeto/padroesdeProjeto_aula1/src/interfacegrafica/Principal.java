@@ -72,6 +72,7 @@ public class Principal extends javax.swing.JFrame {
         table = new javax.swing.JTable();
         btnListarArrayList = new javax.swing.JButton();
         btnLimpar = new javax.swing.JButton();
+        btnListarFila = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +103,18 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        btnListarFila.setText("Listar Fila");
+        btnListarFila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarFilaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,6 +129,8 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnOk, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnListarFila)
+                                .addGap(32, 32, 32)
                                 .addComponent(btnListarArrayList)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnLimpar)))))
@@ -127,7 +142,8 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnListarArrayList)
-                    .addComponent(btnLimpar))
+                    .addComponent(btnLimpar)
+                    .addComponent(btnListarFila))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -149,8 +165,7 @@ public class Principal extends javax.swing.JFrame {
         if (res == JFileChooser.APPROVE_OPTION) {
             try {
                 File selectedFile = abrirArquivo.getSelectedFile();
-                Iterator urlarquivo = alunoPO.abrirArquivo(selectedFile.getAbsolutePath());
-
+                Iterator urlarquivo = alunoPO.listarComArraylist(selectedFile.getAbsolutePath());
                 preencherTabela(urlarquivo);
                 //preencherTabela(listaAlunos);
             } catch (Exception ex) {
@@ -160,6 +175,28 @@ public class Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhum arquivo.");
         }
     }//GEN-LAST:event_btnListarArrayListActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+            model.setNumRows(0);
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnListarFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarFilaActionPerformed
+                JFileChooser abrirArquivo = new JFileChooser();
+        int res = abrirArquivo.showOpenDialog(this);
+
+        if (res == JFileChooser.APPROVE_OPTION) {
+            try {
+                File selectedFile = abrirArquivo.getSelectedFile();
+                Iterator urlarquivo = alunoPO.listarComFila(selectedFile.getAbsolutePath());
+                preencherTabela(urlarquivo);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Voce nao selecionou nenhum arquivo.");
+        }
+    }//GEN-LAST:event_btnListarFilaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,6 +236,7 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnListarArrayList;
+    private javax.swing.JButton btnListarFila;
     private javax.swing.JButton btnOk;
     private javax.swing.JFileChooser fileCh;
     private javax.swing.JScrollPane jScrollPane2;
