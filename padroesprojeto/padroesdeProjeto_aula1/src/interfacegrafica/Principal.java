@@ -78,7 +78,7 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         fileCh = new javax.swing.JFileChooser();
-        btnOk = new javax.swing.JButton();
+        btnListar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
         btnListarArrayList = new javax.swing.JButton();
@@ -89,10 +89,10 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnOk.setText("ok");
-        btnOk.addActionListener(new java.awt.event.ActionListener() {
+        btnListar.setText("Sair");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt);
+                btnListarActionPerformed(evt);
             }
         });
 
@@ -153,18 +153,18 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnOk, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnListarArvore)
-                                .addGap(28, 28, 28)
-                                .addComponent(btnListarSet)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnListarFila)
-                                .addGap(32, 32, 32)
-                                .addComponent(btnListarArrayList)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnLimpar)))))
+                        .addComponent(btnListarArvore)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnListarSet)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnListarFila)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnListarArrayList)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLimpar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnListar)
+                        .addGap(4, 4, 4)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -176,20 +176,19 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btnLimpar)
                     .addComponent(btnListarFila)
                     .addComponent(btnListarSet)
-                    .addComponent(btnListarArvore))
+                    .addComponent(btnListarArvore)
+                    .addComponent(btnListar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnOk)
-                .addGap(27, 27, 27))
+                .addGap(61, 61, 61))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
         this.dispose();
-    }//GEN-LAST:event_btnOkActionPerformed
+    }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnListarArrayListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarArrayListActionPerformed
             try {
@@ -275,11 +274,11 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpar;
+    private javax.swing.JButton btnListar;
     private javax.swing.JButton btnListarArrayList;
     private javax.swing.JButton btnListarArvore;
     private javax.swing.JButton btnListarFila;
     private javax.swing.JButton btnListarSet;
-    private javax.swing.JButton btnOk;
     private javax.swing.JFileChooser fileCh;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable table;
