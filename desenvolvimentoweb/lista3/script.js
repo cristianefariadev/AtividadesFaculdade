@@ -140,7 +140,7 @@ function anoBissexto() {
 function validaData() {
     var canpo = new Date(document.getElementById("data").value);
 
-   if (campo!=""){
+  /* if (campo!=""){
 
         erro=0;
         hoje = new Date();
@@ -170,6 +170,6 @@ function validaData() {
          }
 return true;
 }
-}
+}*/
 }
 
