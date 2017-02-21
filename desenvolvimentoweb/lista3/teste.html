@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script type="text/javascript">
+ function anoBissexto1(ano) {
+  if (validaQuantidadeDigitos(ano.value))
+   return (new Date(ano, 1, 29).getMonth() == 1) ? 1 : 0;
+ }
+
+
+ function validaQuantidadeDigitos(valor) {
+  if (valor.length < 4) {
+   return;
+  } else {
+   return true;
+  }
+ }
+</script>
+
+</head>
+<body>
+<form action="#" id="aksd">
+Ano usando date:
+ <input type="number" maxlength="4" id="ano" name="ano"
+  onkeyup="anoBissexto1(this)">
+ <br /> Ano usando int:
+ <input type="number" maxlength="4" id="ano" name="ano"
+  onkeyup="anoBissexto1(this)">
+
+  
+  </form>
+</body>
+</html>

@@ -9,22 +9,26 @@
 </head>
 
 <body>
-    <h1>Exercício 5</h1>
+    <h1>Exercício 10</h1>
     <a href="index.html">Voltar para página principal</a>
     <h1></h1>
     <fieldset>
-        <legend>Números ímpares até n</legend>
-        <form action="#" name="exe5">
+        <legend>Linhas de caracteres</legend>
+        <form action="#" name="exe10">
 
-            <p>Digite um número:
-                <input type="text" id="nImpar" name="nImpar" />
+            <p>Digite o caractere:<br>
+                <input type="text" id="caractere" />
             </p>
-            <input type="reset" value="LIMPAR"/>
-            <input type="button" value="CALCULAR" onclick="ImprimiImpar()" />
-            
-            
+
+            <p>Digite a quantidade de linha:<br>
+                <input type="number" id="linha" />
+            </p>
+
+            <input type="reset" value="LIMPAR" />
+            <input type="button" value="CALCULAR" onclick="desenhaCaractere()" />
+            <div id="result"></div>
+
         </form>
     </fieldset>
 </body>
-
 </html>

@@ -20,6 +20,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeSet;
 
 /**
@@ -53,6 +54,7 @@ public class AlunoPO {
     }
 
     public Iterator listarComFila(String urlArquivo) {
+        //Queue<Aluno> listaDeAlunos = new LinkedList<>();
         LinkedList<Aluno> listaDeAlunos = new LinkedList<>();
         try {
             FileReader fr = new FileReader(urlArquivo);
@@ -71,7 +73,8 @@ public class AlunoPO {
     }
 
     public Iterator listarComPilha(String urlArquivo) {
-        LinkedList<Aluno> listaDeAlunos = new LinkedList<>();
+        Stack listaDeAlunos = new Stack ();
+     ///LinkedList<Aluno> listaDeAlunos = new LinkedList<>();
         try {
             FileReader fr = new FileReader(urlArquivo);
             BufferedReader br = new BufferedReader(fr);
@@ -80,7 +83,6 @@ public class AlunoPO {
                 Aluno objetoAluno = alunoControl.populaAluno(linha);
                 listaDeAlunos.push(objetoAluno);
             }
-
             Collections.sort(listaDeAlunos);
         } catch (Exception erro) {
             System.out.println("Erro ao abrir o arquivo." + erro.getMessage());
@@ -99,7 +101,7 @@ public class AlunoPO {
                 listaDeAlunos.add(objetoAluno);
             }
 
-            //Collections.sort(listaDeAlunos);
+           // Collections.sort(listaDeAlunos);
         } catch (Exception erro) {
             System.out.println("Erro ao abrir o arquivo." + erro.getMessage());
         }

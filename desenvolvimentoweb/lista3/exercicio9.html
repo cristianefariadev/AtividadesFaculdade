@@ -9,21 +9,32 @@
 </head>
 
 <body>
-    <h1>Exercício 5</h1>
+    <h1>Exercício 9</h1>
     <a href="index.html">Voltar para página principal</a>
     <h1></h1>
     <fieldset>
-        <legend>Números ímpares até n</legend>
-        <form action="#" name="exe5">
+        <legend>Retorna 0 para par e 1 para impar</legend>
+        	<form action="#" name="exe9" id="exe9">
+		<p>
+			Digite um número: <input type="number" id="num" name="num"
+				onkeyup="retornaImparouPar(this)" /><br>
+
+                resultado:
+				<input type="text"
+				id="resultado" name="resultado" style="border: 0px"
+				readonly="readonly" />
+		</p>
+
+
+   <!--     <form action="#" name="exe9">
 
             <p>Digite um número:
-                <input type="text" id="nImpar" name="nImpar" />
+                <input type="number" id="num" name="num" />
             </p>
+            
             <input type="reset" value="LIMPAR"/>
-            <input type="button" value="CALCULAR" onclick="ImprimiImpar()" />
-            
-            
-        </form>
+            <input type="button" value="CALCULAR" onclick="retornaImparouPar()" />
+        </form>-->
     </fieldset>
 </body>
 

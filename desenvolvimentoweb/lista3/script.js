@@ -56,38 +56,120 @@ function ImprimiImpar() {
     var nImpar = document.getElementById("nImpar").value;
     for (var i = 0; i <= nImpar; i++) {
         if (i % 2 != 0) {
-           document.writeln(i);
+            document.writeln(i);
         }
     }
     return false;
 }
 
 //exercicio 6
-function Tabuada(){
+function Tabuada() {
     var nTabuada = document.getElementById("nTabuada").value;
     for (var i = 1; i < 11; i++) {
-        document.writeln(i + " x " + nTabuada + " = " + i*nTabuada + "<br>");
+        document.writeln(i + " x " + nTabuada + " = " + i * nTabuada + "<br>");
     }
-   return false;
-}
-
-//exercicio 7
-function VerificaPerfeito(){
-for (var i = 0; i < 10; i++) {
-    var element = array[i];
-    
-}
     return false;
 }
 
+//exercicio 7
+function VerificaPerfeito() {
+    nPerfeito = document.getElementById("nPerfeito").value;
+    divisores = 0;
+    for (var i = 1; i < nPerfeito; i++) {
+        if (nPerfeito % i == 0) {
+            divisores += i;
+        }
+    }
+    var resultado = nPerfeito == divisores ? "Numero perfeito" : "Número não é perfeito";
+    alert(resultado);
+
+}
+
 //exercicio8
-function nValoresImpares(){
+function nValoresImpares() {
     var nImpar1 = document.getElementById("nImpar1").value;
     var nImpar2 = document.getElementById("nImpar2").value;
     for (var i = nImpar1; i <= nImpar2; i++) {
         if (i % 2 != 0) {
-           document.writeln(i);
+            document.writeln(i);
         }
     }
     return false;
 }
+
+//exercicio9
+function retornaImparouPar(num) {
+    if (num.value.length > 0) {
+        if (parseInt(num.value) % 2 == 0) {
+            document.exe9.resultado.value = 0;
+        } else {
+            document.exe9.resultado.value = 1;
+
+        }
+    } else {
+        document.exe9.resultado.value = "";
+    }
+}
+
+//exercicio10
+function desenhaCaractere(linha, caractere) {
+    var linha = document.getElementById("linha").value;
+    var caractere = document.getElementById("caractere").value;
+    var resultado = '';
+
+    for (var i = 1; i <= linha; i++) {
+        resultado += '<br />' + caractere;
+
+    }
+    document.getElementById('result').innerHTML = resultado;
+    return false;
+}
+
+//exercicio11
+function anoBissexto() {
+    var ano = document.getElementById("ano").value;
+
+    if (validaQuantidadeDigitos(ano.value))
+        return (new Date(ano, 1, 29).getMonth() == 1) ? 1 : 0;
+    }
+
+
+
+
+//exercicio12
+function validaData() {
+    var canpo = new Date(document.getElementById("data").value);
+
+   if (campo!=""){
+
+        erro=0;
+        hoje = new Date();
+        anoAtual = hoje.getFullYear();
+        barras = campo.split("/");
+        if (barras.length == 3)
+        {
+            dia = barras[0];
+            mes = barras[1];
+            ano = barras[2];
+
+                resultado = (!isNaN(dia) && (dia > 0) && (dia < 32))
+                 && (!isNaN(mes) && (mes > 0) && (mes < 13)) && (!isNaN(ano) && (ano.length == 4)
+                  && (ano <= anoAtual && ano >= 1900));
+                if (!resultado)
+                {
+                        alert("Data inválida.");
+                        //campo.focus();
+                        return false;
+                }
+         }
+         else
+         {
+                 alert("Data inválida.");
+                 //campo.focus();
+                 return false;
+         }
+return true;
+}
+}
+}
+

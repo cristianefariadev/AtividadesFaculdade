@@ -9,18 +9,24 @@
 </head>
 
 <body>
-    <h1>Exercício 5</h1>
+    <h1>Exercício 11</h1>
     <a href="index.html">Voltar para página principal</a>
     <h1></h1>
     <fieldset>
-        <legend>Números ímpares até n</legend>
-        <form action="#" name="exe5">
+        <legend>Verifica se ano bissexto</legend>
 
-            <p>Digite um número:
-                <input type="text" id="nImpar" name="nImpar" />
-            </p>
+
+
+
+        <form action="#" name="exe11">
+
+        Ano usando date:
+        <input type="number" maxlength="4" id="ano" name="ano"
+         onkeyup="anoBissexto1(this)">
+
+
             <input type="reset" value="LIMPAR"/>
-            <input type="button" value="CALCULAR" onclick="ImprimiImpar()" />
+            <input type="button" value="CALCULAR" onclick="verificaAno()" />
             
             
         </form>

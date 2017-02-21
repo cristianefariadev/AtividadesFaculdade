@@ -86,6 +86,10 @@ public class Principal extends javax.swing.JFrame {
         btnListarFila = new javax.swing.JButton();
         btnListarSet = new javax.swing.JButton();
         btnListarArvore = new javax.swing.JButton();
+        btnListarPilha = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,16 +147,38 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        btnListarPilha.setText("Listar Pilha");
+        btnListarPilha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarPilhaActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Ordenar:");
+
+        jRadioButton1.setText("Crescente");
+
+        jRadioButton2.setText("Decrescente");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 882, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnListarPilha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnListarArvore)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnListarSet)
@@ -177,7 +203,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btnListarFila)
                     .addComponent(btnListarSet)
                     .addComponent(btnListarArvore)
-                    .addComponent(btnListar))
+                    .addComponent(btnListar)
+                    .addComponent(btnListarPilha)
+                    .addComponent(jLabel1)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
                 .addGap(61, 61, 61))
@@ -237,6 +267,17 @@ public class Principal extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_btnListarArvoreActionPerformed
 
+    private void btnListarPilhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarPilhaActionPerformed
+                    try {
+                abrirArquivo();
+                Iterator urlarquivo = alunoPO.listarComPilha(selectedFile.getAbsolutePath());
+                preencherTabela(urlarquivo);
+                //preencherTabela(listaAlunos);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo" + ex.getMessage());
+            }
+    }//GEN-LAST:event_btnListarPilhaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,8 +319,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnListarArrayList;
     private javax.swing.JButton btnListarArvore;
     private javax.swing.JButton btnListarFila;
+    private javax.swing.JButton btnListarPilha;
     private javax.swing.JButton btnListarSet;
     private javax.swing.JFileChooser fileCh;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable table;
     // End of variables declaration//GEN-END:variables
