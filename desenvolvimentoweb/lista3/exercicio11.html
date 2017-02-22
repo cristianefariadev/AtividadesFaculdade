@@ -15,20 +15,15 @@
     <fieldset>
         <legend>Verifica se ano bissexto</legend>
 
-
-
-
         <form action="#" name="exe11">
+        <p>
+        <label>Digite o ano:</label>
+        <input type="text" id="ano" name="ano" maxlength="4"/>
+        </p>
 
-        Ano usando date:
-        <input type="number" maxlength="4" id="ano" name="ano"
-         onkeyup="anoBissexto1(this)">
-
-
-            <input type="reset" value="LIMPAR"/>
-            <input type="button" value="CALCULAR" onclick="verificaAno()" />
-            
-            
+        <input type="reset" value="LIMPAR"/>
+        <input type="button" value="CALCULAR" onclick="verificaAno(ano.value)" />
+        <div id="result"></div>     
         </form>
     </fieldset>
 </body>

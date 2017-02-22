@@ -17,11 +17,11 @@
         <form action="#" name="exe12">
 
             <p>Digite a data:
-                <input type="date" id="data"/>
+                <input type="text" id="data" maxlength="10"/>
             </p>
             <input type="reset" value="LIMPAR"/>
-            <input type="button" value="CALCULAR" onclick="validaData()" />
-            
+            <input type="button" value="CALCULAR" onclick="validaData(data.value)" />
+            <div id="result"></div>
         </form>
     </fieldset>
 </body>

@@ -112,9 +112,7 @@ function retornaImparouPar(num) {
 }
 
 //exercicio10
-function desenhaCaractere(linha, caractere) {
-    var linha = document.getElementById("linha").value;
-    var caractere = document.getElementById("caractere").value;
+function desenhaCaractere( caractere , linha) {
     var resultado = '';
 
     for (var i = 1; i <= linha; i++) {
@@ -126,50 +124,47 @@ function desenhaCaractere(linha, caractere) {
 }
 
 //exercicio11
-function anoBissexto() {
-    var ano = document.getElementById("ano").value;
+function verificaAno(ano) {
 
-    if (validaQuantidadeDigitos(ano.value))
-        return (new Date(ano, 1, 29).getMonth() == 1) ? 1 : 0;
+        resultado = (new Date(ano, 1, 29).getMonth() == 1) ? 1 + " - Bissesto": 0 + " - Não é Bissesto";
+         document.getElementById('result').innerHTML = resultado;
     }
 
 
-
-
 //exercicio12
-function validaData() {
-    var canpo = new Date(document.getElementById("data").value);
+function validaData(data) {
 
-  /* if (campo!=""){
-
-        erro=0;
+   if (data != ""){
         hoje = new Date();
         anoAtual = hoje.getFullYear();
-        barras = campo.split("/");
-        if (barras.length == 3)
-        {
+        barras = data.split("/");
+
+        if (barras.length == 3) {
+
             dia = barras[0];
             mes = barras[1];
             ano = barras[2];
 
                 resultado = (!isNaN(dia) && (dia > 0) && (dia < 32))
                  && (!isNaN(mes) && (mes > 0) && (mes < 13)) && (!isNaN(ano) && (ano.length == 4)
-                  && (ano <= anoAtual && ano >= 1900));
-                if (!resultado)
-                {
+                  && (ano <= anoAtual && ano >= 0001));
+                if (!resultado) {
                         alert("Data inválida.");
-                        //campo.focus();
+                        return false;
+                }else{
+                    alert("Data válida.");
                         return false;
                 }
-         }
-         else
-         {
+
+         }else {
                  alert("Data inválida.");
-                 //campo.focus();
                  return false;
          }
-return true;
+    }else{
+        alert("Data  não fornecida.");
+              return false;
+    }
+   
 }
-}*/
-}
+
 
