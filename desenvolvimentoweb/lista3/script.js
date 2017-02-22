@@ -126,9 +126,9 @@ function desenhaCaractere( caractere , linha) {
 //exercicio11
 function verificaAno(ano) {
 
-        resultado = (new Date(ano, 1, 29).getMonth() == 1) ? 1 + " - Bissesto": 0 + " - Não é Bissesto";
-         document.getElementById('result').innerHTML = resultado;
-    }
+    resultado = (new Date(ano, 1, 29).getMonth() == 1) ? 1 + " - Bissesto": 0 + " - Não é Bissesto";
+    document.getElementById('result').innerHTML = resultado;
+}
 
 
 //exercicio12
@@ -166,5 +166,3 @@ function validaData(data) {
     }
    
 }
-
-
